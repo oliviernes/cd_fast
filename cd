@@ -12,7 +12,9 @@ charac1="/"
 
 let "a=0"
 let "b=0"
-    
+let "c=0"    
+tableau=()
+
 for i in $pathcd; do
     if [ ${i:0:1} == "/" ] && [ "${a}" -eq "${b}" ];
     then
@@ -23,13 +25,17 @@ for i in $pathcd; do
         path1="${path1} ${i}"
     elif [ ${i:0:1} == "/" ] && [ "${a}" -ne "${b}" ];
     then
-        echo $path1
+        tableau[${c}]="${path1}"
         path1=""
         path1="${path1}${i}"
+        let "c=c+1"
     fi
 done
 
-
+for val in "${tableau[@]}"
+do
+    echo ${val}
+done
 
 #~ echo $path1
 
