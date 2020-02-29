@@ -8,7 +8,6 @@ pathcd=`xclip -o`
 echo $pathcd
 
 path1=""
-charac1="/"
 
 let "a=0"
 let "b=0"
@@ -18,11 +17,11 @@ tableau=()
 for i in $pathcd; do
     if [ ${i:0:1} == "/" ] && [ "${a}" -eq "${b}" ];
     then
-        path1="${path1} ${i}"
+        path1="${path1}${i}"
         let "a=a+1"
     elif [ ${i:0:1} != "/" ];
     then
-        path1="${path1}\\ ${i}"
+        path1="${path1} ${i}"
     elif [ ${i:0:1} == "/" ] && [ "${a}" -ne "${b}" ];
     then
         tableau[${c}]="${path1}"
@@ -32,7 +31,7 @@ for i in $pathcd; do
     fi
 done
 
-echo "Choose your value"
+echo "Choose which way you want to go:"
 
 let "d=0"
 
@@ -43,10 +42,10 @@ do
     echo $way
 done
 
-read wayc
-let "wayc=wayc-1"
+read waycd
+let "waycd=waycd-1"
 
-echo ${tableau[${wayc}]}
-wayd=${tableau[${wayc}]}
-cd "${wayd}"
-#~ cd $pathcd
+echo ${tableau[${waycd}]}
+wayd=\"${tableau[${waycd}]}\"
+echo $wayd
+eval cd $wayd
