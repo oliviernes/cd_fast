@@ -24,7 +24,7 @@ Place the file cd in a convenient place (ex: /home)
 
 The script accept the name of the directory as parameter:
 
-. cd <name of the directory>
+. cd \<name of the directory\>
 
 then follow instructions.
 
@@ -37,7 +37,7 @@ Advice:
 
 Use wildcards like * to help you find your directory:
 
-. cd *<incomplete name>*
+. cd *\<incomplete name\>*
 
 
 
