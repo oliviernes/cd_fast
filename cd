@@ -31,6 +31,8 @@ for i in $pathcd; do
     fi
 done
 
+array[${c}]="${path1}"
+
 if [ ${#array[@]} = 0 ];
 then
     echo "No directory with this name. Try again."
@@ -54,8 +56,6 @@ else
     read waycd
     let "waycd=waycd-1"
 
-    echo ${array[${waycd}]}
     wayd=\"${array[${waycd}]}\"
-    echo $wayd
     eval cd $wayd
 fi
