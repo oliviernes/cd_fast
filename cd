@@ -12,7 +12,7 @@ path1=""
 let "a=0"
 let "b=0"
 let "c=0"    
-tableau=()
+array=()
 
 for i in $pathcd; do
     if [ ${i:0:1} == "/" ] && [ "${a}" -eq "${b}" ];
@@ -24,28 +24,38 @@ for i in $pathcd; do
         path1="${path1} ${i}"
     elif [ ${i:0:1} == "/" ] && [ "${a}" -ne "${b}" ];
     then
-        tableau[${c}]="${path1}"
+        array[${c}]="${path1}"
         path1=""
         path1="${path1}${i}"
         let "c=c+1"
     fi
 done
 
-echo "Choose which way you want to go:"
+if [ ${#array[@]} = 0 ];
+then
+    echo "No directory with this name. Try again."
+elif [ ${#array[@]} = 1 ];
+then
+    wayd=\"${array[0]}\"
+    echo $wayd
+    eval cd $wayd
+else
+    echo "Choose which way you want to go:"
 
-let "d=0"
+    let "d=0"
 
-for val in "${tableau[@]}"
-do
-    let "d=d+1"
-    way="${d}-${val}"
-    echo $way
-done
+    for val in "${array[@]}"
+    do
+        let "d=d+1"
+        way="${d}-${val}"
+        echo $way
+    done
 
-read waycd
-let "waycd=waycd-1"
+    read waycd
+    let "waycd=waycd-1"
 
-echo ${tableau[${waycd}]}
-wayd=\"${tableau[${waycd}]}\"
-echo $wayd
-eval cd $wayd
+    echo ${array[${waycd}]}
+    wayd=\"${array[${waycd}]}\"
+    echo $wayd
+    eval cd $wayd
+fi
