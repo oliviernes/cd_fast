@@ -34,7 +34,7 @@ inside right away.
 
 ***The search is case insensitive.***
 
-Advice:
+### Advice:
 
 Use wildcards like * to help you find your directory:
 
