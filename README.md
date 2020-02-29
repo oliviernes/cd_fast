@@ -25,7 +25,7 @@ Place the file cd in a convenient place (ex: /home)
 
 The script accept the name of the directory as parameter:
 
-. cd \<name of the directory\>
+. cd \<name_of_the_directory\>
 
 then follow instructions.
 
@@ -38,9 +38,9 @@ inside right away.
 
 Use wildcards like * to help you find your directory:
 
-. cd *\<incomplete name\>*
+. cd *\<incomplete_name\>*
 
-
+Your search must not have space inside in order to get the good results.
 
 
 
