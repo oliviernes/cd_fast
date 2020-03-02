@@ -16,18 +16,24 @@ sudo apt-get install xclip
 ### set up:
 
 You can change the folder where the script begin to look for the
- directory'name by changing the parameter of the find command at line 5
- after (find). Replace ~/Documents/ by your choice.
+ directory's name by changing the parameter of the find command at line
+ 5 after (find). Replace ~/Documents/ by your choice.
 
 ### Usage:
 
-Place the file cd in a convenient place (ex: /home)
+Place the file cdf in a convenient place (ex: /home).
 
-The script accept the name of the directory as parameter:
+Then create an alias in your ```~/.profile``` (could be ```~/.bashrc```
+ or ```~/.bash_profile```) like this one:
 
-. cd \<name_of_the_directory\>
+alias cdf='. ~/cdf'
 
-then follow instructions.
+You can then use the command cdf (the script accept the name of the
+ directory as parameter):
+
+cdf \<name_of_the_directory\>
+
+Then follow instructions.
 
 If there is only one directory maching the search, the script will cd 
 inside right away.
@@ -38,7 +44,7 @@ inside right away.
 
 Use wildcards like * to help you find your directory:
 
-. cd *\<incomplete_name\>*
+cdf *\<incomplete_name\>*
 
 Your search must not have space inside in order to get the good results.
 
