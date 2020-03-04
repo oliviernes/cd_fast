@@ -1,6 +1,14 @@
 #!/bin/bash
 
-echo "search directory $1 and change directory"
+#display first message:
+
+echo -e "Search for directory $1 and change directory\n"
+
+<<COMMENT
+use find command to look for directories
+use iname parameter to search case insensitive
+use xclip to copy paste the result
+COMMENT
 
 find ~/Documents/ -iname $1 -type d | xclip
 
@@ -12,6 +20,8 @@ let "a=0"
 let "b=0"
 let "c=0"    
 array=()
+
+#Loop in the result of the find command to build the paths's array:
 
 for i in $pathcd; do
     if [ ${i:0:1} == "/" ] && [ "${a}" -eq "${b}" ];
@@ -30,7 +40,11 @@ for i in $pathcd; do
     fi
 done
 
+#Add the last path to the array:
+
 array[${c}]="${path1}"
+
+#use if sentences to cd right away or ask the path to follow:
 
 if [ ${#array[@]} = 0 ];
 then
@@ -41,7 +55,7 @@ then
     echo $wayd
     eval cd $wayd
 else
-    echo "Choose which way you want to go:"
+    echo -e "Choose which way you want to go:\n"
 
     let "d=0"
 
