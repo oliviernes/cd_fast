@@ -46,7 +46,7 @@ array[${c}]="${path1}"
 
 #use if sentences to cd right away or ask the path to follow:
 
-if [ ${#array[@]} = 0 ];
+if [ "${array[@]}" == "" ];
 then
     echo "No directory with this name. Try again."
 elif [ ${#array[@]} = 1 ];
