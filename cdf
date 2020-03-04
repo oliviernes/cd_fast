@@ -1,11 +1,10 @@
 #!/bin/bash
 
-echo "Look for directory $1 and change directory"
+echo "search directory $1 and change directory"
 
 find ~/Documents/ -iname $1 -type d | xclip
-pathcd=`xclip -o`
 
-echo $pathcd
+pathcd=`xclip -o`
 
 path1=""
 
