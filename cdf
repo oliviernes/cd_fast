@@ -10,7 +10,16 @@ use iname parameter to search case insensitive
 use xclip to copy paste the result
 COMMENT
 
-find ~/Documents/ -iname $1 -type d | xclip
+#Choose between find and locate to search your folder:
+#locate is faster but you need to launch updatedb to update
+#the folders'ways.
+
+#With finds:
+#find ~/Documents/ -iname $1 -type d | xclip
+
+#With locate (beware to adapt the regex if your name's folders include other characters):
+#-i option is to ignore case distinctions when matching patterns.
+locate --regex -i ^\/home\/$USER\/Documents[a-z,A-Z,_,\ ,\/]*$1[a-z,A-Z,\ ,_]*$ | xclip
 
 pathcd=`xclip -o`
 
