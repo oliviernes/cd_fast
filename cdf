@@ -12,7 +12,7 @@ COMMENT
 
 #Choose between find and locate to search your folder:
 #locate is faster but you need to launch updatedb to update
-#the folders'ways.
+#the folders'paths.
 
 #With finds:
 #find ~/Documents/ -iname $1 -type d | xclip
