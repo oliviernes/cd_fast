@@ -5,7 +5,7 @@
 echo -e "Search for directory $1 and change directory\n"
 
 <<COMMENT
-use find command to look for directories
+use find or locate commands to look for directories
 use iname parameter to search case insensitive
 use xclip to copy paste the result
 COMMENT
