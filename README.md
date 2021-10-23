@@ -42,7 +42,7 @@ inside right away.
 
 ### Advice:
 
-Use wildcards like * to help you find your directory:
+Use wildcards like * to help you find your directory if you are using find command:
 
 cdf *\<incomplete_name\>*
 
