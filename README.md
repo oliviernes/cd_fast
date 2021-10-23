@@ -16,8 +16,8 @@ sudo apt-get install xclip
 ### set up:
 
 You can change the folder where the script begin to look for the
- directory's name by changing the parameter of the find command at line
- 5 after (find). Replace ~/Documents/ by your choice.
+ directory's name by changing the parameter of the find or locate
+ command. Replace ~/Documents/ or /home\/$USER\/Documents by your choice.
 
 ### Usage:
 
