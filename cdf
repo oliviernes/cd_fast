@@ -19,7 +19,7 @@ COMMENT
 
 #With locate (beware to adapt the regex if your name's folders include other characters):
 #-i option is to ignore case distinctions when matching patterns.
-locate --regex -i ^\/home\/$USER\/Documents[a-z,A-Z,_,\ ,\/]*$1[a-z,A-Z,\ ,_]*$ | xclip
+locate --regex -i ^\/home\/$USER\/Documents[a-z,A-Z,1-9,_,\ ,-,\/]*$1[a-z,A-Z,1-9,\ ,_,-,]*$ | xclip
 
 pathcd=`xclip -o`
 
